@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+
+  --color-brand-orange: #D66A25;
+  --color-brand-orange-hover: #BF5919;
+  --color-brand-brown: #402015;
+  --color-brand-amber: #E9A04A;
+  --color-brand-gray: #626262;
+  --color-surface-warm: #FAF8F6;
+  --color-border-warm: #E8E1DB;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: var(--color-brand-gray);
+    background-color: #FFFFFF;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-brand-brown);
+  }
+
+  :focus-visible {
+    outline: 2px solid #D66A25;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
